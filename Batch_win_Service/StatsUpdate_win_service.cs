@@ -32,8 +32,8 @@ namespace StatsUpdate_win_Service
             MSYNC();
             System.Timers.Timer timer = new System.Timers.Timer();
             timer.Enabled = true;
-            //timer.Interval = new TimeSpan(1, 0, 0, 0).TotalMilliseconds;
-            timer.Interval = 1000;
+            timer.Interval = new TimeSpan(1, 0, 0, 0).TotalMilliseconds;
+            //timer.Interval = 1000;
             //timer.Interval = 60000 * 60;
             timer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
             // _timer.Change(0, 2000);
@@ -61,7 +61,7 @@ namespace StatsUpdate_win_Service
                               join cmp in camp_stat_lst on st1.FK_Rid equals cmp.Fk_rid
                               select new stat_counts()
                               {
-                                  UniqueUsersToday = 10,
+                                  UniqueUsersToday = 0,
                                   UsersToday = 0,
                                   UniqueUsersYesterday = cmp.UniqueUsersToday,
                                   UsersYesterday = st1.UsersToday,

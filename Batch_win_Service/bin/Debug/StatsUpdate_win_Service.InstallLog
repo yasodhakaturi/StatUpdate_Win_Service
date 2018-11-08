@@ -1,0 +1,78 @@
+﻿Installing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Installing service MySqlStatsUpdate_win_Service...
+Creating EventLog source MySqlStatsUpdate_win_Service in log Application...
+Rolling back assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Restoring event log to previous state for source MySqlStatsUpdate_win_Service.
+Installing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Installing service MySqlStatsUpdate_win_Service...
+Creating EventLog source MySqlStatsUpdate_win_Service in log Application...
+Rolling back assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Restoring event log to previous state for source MySqlStatsUpdate_win_Service.
+Installing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Installing service MySqlStatsUpdate_win_Service...
+Creating EventLog source MySqlStatsUpdate_win_Service in log Application...
+Rolling back assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Restoring event log to previous state for source MySqlStatsUpdate_win_Service.
+Installing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Installing service MySqlStatsUpdate_win_Service...
+Creating EventLog source MySqlStatsUpdate_win_Service in log Application...
+Rolling back assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Restoring event log to previous state for source MySqlStatsUpdate_win_Service.
+Installing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Installing service MySqlStatsUpdate_win_Service...
+Creating EventLog source MySqlStatsUpdate_win_Service in log Application...
+Rolling back assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Restoring event log to previous state for source MySqlStatsUpdate_win_Service.
+Installing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
+Installing service MySqlStatsUpdate_win_Service...
+Service MySqlStatsUpdate_win_Service has been successfully installed.
+Creating EventLog source MySqlStatsUpdate_win_Service in log Application...
+Committing assembly 'C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.InstallLog
+   assemblypath = C:\Users\yasodha\Documents\Visual Studio 2013\Projects\Yasodha Shorten URL documents\MYSQLProjec\MYSQLWindowsService\StatUpdate_Win_Service\Batch_win_Service\bin\Debug\StatsUpdate_win_Service.exe
