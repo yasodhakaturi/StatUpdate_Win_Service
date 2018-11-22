@@ -142,11 +142,24 @@ namespace StatsUpdate_win_Service
         public int? uniqueVisitsToday { get; set; }
 
     }
+    public class uniqueVisitsLast7day1
+    {
+        public int? uniqueVisitsLast7day { get; set; }
+
+    }
+    public class visitsLast7days1
+    {
+        public int? visitsLast7days { get; set; }
+
+    }
     public class Camp_stat_sp
     {
         public int? Fk_rid { get; set; }
         public int? UniqueUsersToday { get; set; }
+        public int? UniqueVisits { get; set; }
         public int? UniqueVisitsToday { get; set; }
+        public int? uniqueVisitsLast7day { get; set; }
+        public int? visitsLast7days { get; set; }
         public int? RevisitsTotal_Today { get; set; }
         public double? RevisitsPercent_Today { get; set; }
         public int? NoVisitsTotal_Today { get; set; }

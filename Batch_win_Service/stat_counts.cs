@@ -62,5 +62,6 @@ namespace StatsUpdate_win_Service
         public Nullable<int> FK_Rid { get; set; }
         public Nullable<int> FK_ClientID { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<int> UniqueVisits { get; set; }
     }
 }

@@ -21,7 +21,6 @@
         <EntityTypeShape EntityType="shortenurlModel.messagelink" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.riddata" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.shorturldata" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="shortenurlModel.stat_counts" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.sysdiagram" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.tmp_rownum_update" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.uiddata" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
@@ -34,6 +33,7 @@
         <AssociationConnector Association="shortenurlModel.FK_SHORTURLDATA_RIDDATA" ManuallyRouted="false" />
         <AssociationConnector Association="shortenurlModel.FK_UIDDATA_RIDDATA" ManuallyRouted="false" />
         <AssociationConnector Association="shortenurlModel.FK_SHORTURLDATA_UIDDATA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="shortenurlModel.stat_counts" Width="1.5" PointX="13.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -32,8 +32,8 @@ namespace StatsUpdate_win_Service
             MSYNC();
             System.Timers.Timer timer = new System.Timers.Timer();
             timer.Enabled = true;
-            //timer.Interval = new TimeSpan(1, 0, 0, 0).TotalMilliseconds;
-            timer.Interval = 1000;
+            timer.Interval = new TimeSpan(1, 0, 0, 0).TotalMilliseconds;
+            //timer.Interval = 1000;
             //timer.Interval = 60000 * 60;
             timer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
             // _timer.Change(0, 2000);
@@ -55,48 +55,39 @@ namespace StatsUpdate_win_Service
                 List<Camp_stat_sp> camp_stat_lst = getcamp_stat(stat_list1);
                 List<stat_counts> stat_list2 = new List<stat_counts>();
                 stat_list2 = stat_list1;
-                DateTime todaysDate = DateTime.Now.Date;
+                DateTime todaysDate = DateTime.UtcNow.Date;
                 int daysinmonth = DateTime.DaysInMonth(todaysDate.Year, todaysDate.Month);
                 stat_list1 = (from st1 in stat_list1
-                              join cmp in camp_stat_lst on st1.FK_Rid equals cmp.Fk_rid
+                              //join cmp in camp_stat_lst on st1.FK_Rid equals cmp.Fk_rid
                               select new stat_counts()
                               {
-                                  UniqueUsersToday = 10,
-                                  UsersToday = 0,
-                                  UniqueUsersYesterday = cmp.UniqueUsersToday,
-                                  UsersYesterday = st1.UsersToday,
-                                  UniqueUsersLast7days = ((st1.DaysCount_Week < 2) ? (st1.UniqueUsersYesterday + cmp.UniqueUsersToday) : 0)
-                                                        + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UniqueUsersLast7days + st1.UniqueUsersYesterday + cmp.UniqueUsersToday) : 0),
+                                  
+                                  
+                                  UniqueUsersLast7days = ((st1.DaysCount_Week < 2) ? (st1.UniqueUsersYesterday + st1.UniqueUsersToday) : 0)
+                                                        + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UniqueUsersLast7days + st1.UniqueUsersYesterday + st1.UniqueUsersToday) : 0),
                                   UsersLast7days = ((st1.DaysCount_Week < 2) ? (st1.UsersYesterday + st1.UsersToday) : 0)
                                                   + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UsersLast7days + st1.UsersYesterday + st1.UsersToday) : 0),
-                                  VisitsToday = 0,
-                                  UniqueVisitsToday = 0,
-                                  VisitsYesterday = st1.VisitsToday,
-                                  UniqueVisitsYesterday = st1.UniqueVisitsToday,
-                                  UniqueVisitsLast7day = ((st1.DaysCount_Week < 2) ? (st1.UniqueVisitsYesterday + cmp.UniqueVisitsToday) : 0)
-                                                        + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UniqueVisitsLast7day + st1.UniqueVisitsYesterday + cmp.UniqueVisitsToday) : 0),
+                                  UniqueUsersYesterday = st1.UniqueUsersToday,
+                                  UsersYesterday = st1.UsersToday,
+                                  UniqueUsersToday = 0,
+                                  UsersToday = 0,
+                                  // UniqueUsersLast7days=st1.UniqueUsersLast7days,
+                                  //UsersLast7days = st1.UsersLast7days,
+                                  
+                                  
+                                  UniqueVisitsLast7day = ((st1.DaysCount_Week < 2) ? (st1.UniqueVisitsYesterday + st1.UniqueVisitsToday) : 0)
+                                                        + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UniqueVisitsLast7day + st1.UniqueVisitsYesterday + st1.UniqueVisitsToday) : 0),
                                   VisitsLast7days = ((st1.DaysCount_Week < 2) ? (st1.VisitsYesterday + st1.VisitsToday) : 0)
                                                     + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.VisitsLast7days + st1.VisitsYesterday + st1.VisitsToday) : 0),
+                                  UniqueVisits = st1.UniqueVisits,
+                                  VisitsYesterday = st1.VisitsToday,
+                                  UniqueVisitsYesterday = st1.UniqueVisitsToday,
+                                  VisitsToday = 0,
+                                  UniqueVisitsToday = 0,
+                                  //UniqueVisitsLast7day = st1.UniqueVisitsLast7day,
+                                  //VisitsLast7days = st1.VisitsLast7days,
                                   CampaignsLast7days = (st1.DaysCount_Week < 7) ? (st1.CampaignsLast7days) : 0,
                                   CampaignsMonth = (st1.DaysCount_Month < 7) ? (st1.CampaignsMonth) : 0,
-
-                                  UrlTotal_Today = 0,
-                                  UrlPercent_Today = 0,
-                                  VisitsTotal_Today = 0,
-                                  VisitsPercent_Today = 0,
-                                  RevisitsTotal_Today = 0,
-                                  RevisitsPercent_Today = 0,
-                                  NoVisitsTotal_Today = 0,
-                                  NoVisitsPercent_Today = 0,
-
-                                  UrlTotal_Week = (st1.DaysCount_Week < 7) ? (st1.UrlTotal_Week + st1.UrlTotal_Today) : 0,
-                                  UrlPercent_Week = (st1.DaysCount_Week < 7) ? (st1.UrlPercent_Week + st1.UrlPercent_Today) : 0,
-                                  VisitsTotal_Week = (st1.DaysCount_Week < 7) ? (st1.VisitsTotal_Week + st1.VisitsTotal_Today) : 0,
-                                  VisitsPercent_Week = (st1.DaysCount_Week < 7) ? (st1.VisitsPercent_Week + st1.VisitsPercent_Today) : 0,
-                                  RevisitsTotal_Week = (st1.DaysCount_Week < 7) ? (st1.RevisitsTotal_Week + cmp.RevisitsTotal_Today) : 0,
-                                  RevisitsPercent_Week = (st1.DaysCount_Week < 7) ? (st1.RevisitsPercent_Week + cmp.RevisitsPercent_Today) : 0,
-                                  NoVisitsTotal_Week = (st1.DaysCount_Week < 7) ? (st1.NoVisitsTotal_Week + cmp.NoVisitsTotal_Today) : 0,
-                                  NoVisitsPercent_Week = (st1.DaysCount_Week < 7) ? (st1.NoVisitsTotal_Week + cmp.NoVisitsTotal_Today) : 0,
 
                                   UrlTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.UrlTotal_Month + st1.UrlTotal_Week) : 0,
                                   UrlTotalPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.UrlTotalPercent_Month + st1.UrlPercent_Week) : 0,
@@ -107,8 +98,36 @@ namespace StatsUpdate_win_Service
                                   NoVisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.NoVisitsTotal_Month + st1.NoVisitsTotal_Week) : 0,
                                   NoVisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.NoVisitsPercent_Month + st1.NoVisitsPercent_Week) : 0,
 
+                                  UrlTotal_Week = ((st1.DaysCount_Week < 2) ? (st1.VisitsToday) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UrlTotal_Week + st1.UrlTotal_Today):0),
+                                  UrlPercent_Week = ((st1.DaysCount_Week < 2) ? (st1.UrlPercent_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UrlPercent_Week + st1.UrlPercent_Today) : 0),
+                                  VisitsTotal_Week = ((st1.DaysCount_Week < 2) ? (st1.VisitsTotal_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.VisitsTotal_Week + st1.VisitsTotal_Today) : 0),
+                                  VisitsPercent_Week = ((st1.DaysCount_Week < 2) ? (st1.VisitsPercent_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.VisitsPercent_Week + st1.VisitsPercent_Today) : 0),
+                                  RevisitsTotal_Week = ((st1.DaysCount_Week < 2) ? (st1.RevisitsTotal_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.RevisitsTotal_Week + st1.RevisitsTotal_Today) : 0),
+                                  RevisitsPercent_Week = ((st1.DaysCount_Week < 2) ? (st1.RevisitsPercent_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.RevisitsPercent_Week + st1.RevisitsPercent_Today) : 0),
+                                  NoVisitsTotal_Week = ((st1.DaysCount_Week < 2) ? (st1.NoVisitsTotal_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.NoVisitsTotal_Week + st1.NoVisitsTotal_Today) : 0),
+                                  NoVisitsPercent_Week = ((st1.DaysCount_Week < 2) ? (st1.NoVisitsPercent_Today) : 0)
+                                                    + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.NoVisitsTotal_Week + st1.NoVisitsPercent_Today) : 0),
+
+                                  UrlTotal_Today = 0,
+                                  UrlPercent_Today = 0,
+                                  VisitsTotal_Today = 0,
+                                  VisitsPercent_Today = 0,
+                                  RevisitsTotal_Today = 0,
+                                  RevisitsPercent_Today = 0,
+                                  NoVisitsTotal_Today = 0,
+                                  NoVisitsPercent_Today = 0,
+
                                   DaysCount_Week = (st1.DaysCount_Week < 7) ? (st1.DaysCount_Week + 1) : 0,
-                                  DaysCount_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.DaysCount_Month + 1) : 0
+                                  DaysCount_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.DaysCount_Month + 1) : 0,
+                                  FK_Rid=st1.FK_Rid,
+                                  FK_ClientID=st1.FK_ClientID
                               }
                 ).ToList();
 
@@ -122,6 +141,7 @@ namespace StatsUpdate_win_Service
                     st.UniqueUsersLast7days = stat_list1[rec].UniqueUsersLast7days;
                     st.UsersLast7days = stat_list1[rec].UsersLast7days;
                     st.VisitsToday = stat_list1[rec].VisitsToday;
+                    st.UniqueVisits = stat_list1[rec].UniqueVisits;
                     st.UniqueVisitsToday = stat_list1[rec].UniqueVisitsToday;
                     st.VisitsYesterday = stat_list1[rec].VisitsYesterday;
                     st.UniqueVisitsYesterday = stat_list1[rec].UniqueVisitsYesterday;
@@ -146,6 +166,15 @@ namespace StatsUpdate_win_Service
                     st.RevisitsPercent_Week = stat_list1[rec].RevisitsPercent_Week;
                     st.NoVisitsTotal_Week = stat_list1[rec].NoVisitsTotal_Week;
                     st.NoVisitsPercent_Week = stat_list1[rec].NoVisitsPercent_Week;
+
+                    st.UrlTotal_Month = stat_list1[rec].UrlTotal_Month;
+                    st.UrlTotalPercent_Month = stat_list1[rec].UrlTotalPercent_Month;
+                    st.VisitsTotal_Month = stat_list1[rec].VisitsTotal_Month;
+                    st.VisitsPercent_Month = stat_list1[rec].VisitsPercent_Month;
+                    st.RevisitsTotal_Month = stat_list1[rec].RevisitsTotal_Month;
+                    st.RevisitsPercent_Month = stat_list1[rec].RevisitsPercent_Month;
+                    st.NoVisitsTotal_Month = stat_list1[rec].NoVisitsTotal_Month;
+                    st.NoVisitsPercent_Month = stat_list1[rec].NoVisitsPercent_Month;
 
                     st.DaysCount_Week = stat_list1[rec].DaysCount_Week;
                     st.DaysCount_Month = stat_list1[rec].DaysCount_Month;
@@ -186,7 +215,7 @@ namespace StatsUpdate_win_Service
                 else
                 {
                     lSQLCmd.CommandText = "spGetDashBoardStats";
-                    lSQLCmd.Parameters.Add(new MySqlParameter("@FkClientId", 0));
+                    lSQLCmd.Parameters.Add(new MySqlParameter("@FkClientId", "0"));
                 }
                 lSQLCmd.Connection = lSQLConn;
                 myReader = lSQLCmd.ExecuteReader();
@@ -204,6 +233,14 @@ namespace StatsUpdate_win_Service
                      .ObjectContext
                      .Translate<uniqueVisitsToday1>(myReader, "shorturldatas", MergeOption.AppendOnly).ToList();
                 myReader.NextResult();
+                //uniqueVisitsLast7day1 uniqueVisitsLast7day = ((IObjectContextAdapter)dc)
+                //            .ObjectContext
+                //            .Translate<uniqueVisitsLast7day1>(myReader, "shorturldatas", MergeOption.AppendOnly).SingleOrDefault();
+                //myReader.NextResult();
+                //visitsLast7days1 visitsLast7days = ((IObjectContextAdapter)dc)
+                //    .ObjectContext
+                //    .Translate<visitsLast7days1>(myReader, "shorturldatas", MergeOption.AppendOnly).SingleOrDefault();
+                //myReader.NextResult();
                 // List<recentCampaigns1> recentCampaigns = ((IObjectContextAdapter)dc)
                 //.ObjectContext
                 //.Translate<recentCampaigns1>(myReader, "shorturldatas", MergeOption.AppendOnly).ToList();
@@ -215,7 +252,10 @@ namespace StatsUpdate_win_Service
                .Translate<today1>(myReader, "shorturldatas", MergeOption.AppendOnly).SingleOrDefault();
                 Camp_stat_sp cmp = new Camp_stat_sp();
                 cmp.UniqueUsersToday = (uniqueUsersToday != null) ? (uniqueUsersToday.uniqueUsersToday) : 0;
+                cmp.UniqueVisits = (uniqueVisits != null) ? (uniqueVisits.uniqueVisits) : 0;
                 cmp.UniqueVisitsToday = (uniqueVisitsToday != null) ? (uniqueVisitsToday.Sum(x => x.uniqueVisitsToday)) : 0;
+                //cmp.uniqueVisitsLast7day = (uniqueVisitsLast7day != null) ? (uniqueVisitsLast7day.uniqueVisitsLast7day) : 0;
+                //cmp.visitsLast7days = (visitsLast7days != null) ? (visitsLast7days.visitsLast7days) : 0;
                 cmp.RevisitsTotal_Today = (today1 != null) ? (today1.revisitsTotal) : 0;
                 cmp.RevisitsPercent_Today = (today1 != null) ? (today1.revisitsPercent) : 0;
                 cmp.NoVisitsTotal_Today = (today1 != null) ? (today1.noVisitsTotal) : 0;
@@ -223,6 +263,14 @@ namespace StatsUpdate_win_Service
                 cmp.Fk_rid = st.FK_Rid;
                 lst_camp.Add(cmp);
 
+                st.UniqueUsersToday = (st.UniqueUsersToday < cmp.UniqueUsersToday) ? cmp.UniqueUsersToday : st.UniqueUsersToday;
+                st.UniqueVisits = cmp.UniqueVisits;
+                st.UniqueVisitsToday = (st.UniqueVisitsToday < cmp.UniqueVisitsToday) ? cmp.UniqueVisitsToday : st.UniqueVisitsToday;
+                st.RevisitsTotal_Today = (st.RevisitsTotal_Today < cmp.RevisitsTotal_Today) ? cmp.RevisitsTotal_Today : st.RevisitsTotal_Today;
+                st.RevisitsPercent_Today =(st.RevisitsPercent_Today<cmp.RevisitsPercent_Today) ?cmp.RevisitsPercent_Today:st.RevisitsPercent_Today;
+                st.NoVisitsTotal_Today = (st.NoVisitsTotal_Today < cmp.NoVisitsTotal_Today) ? cmp.NoVisitsTotal_Today : st.NoVisitsTotal_Today;
+                st.NoVisitsPercent_Today = (st.NoVisitsPercent_Today < cmp.NoVisitsPercent_Today) ? cmp.NoVisitsPercent_Today : st.NoVisitsPercent_Today;
+                dc.SaveChanges();
             }
             return lst_camp;
         }
