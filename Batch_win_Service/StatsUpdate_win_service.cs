@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using StatsUpdate_win_Service;
-//using DemoWinService;
+//using DemoWinService;2
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +52,7 @@ namespace StatsUpdate_win_Service
             {
 
                 List<stat_counts> stat_list1 = dc.stat_counts.Select(x => x).ToList();
-                List<Camp_stat_sp> camp_stat_lst = getcamp_stat(stat_list1);
+                //List<Camp_stat_sp> camp_stat_lst = getcamp_stat(stat_list1);
                 List<stat_counts> stat_list2 = new List<stat_counts>();
                 stat_list2 = stat_list1;
                 DateTime todaysDate = DateTime.UtcNow.Date;
@@ -69,8 +69,9 @@ namespace StatsUpdate_win_Service
                                                   + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UsersLast7days + st1.UsersYesterday + st1.UsersToday) : 0),
                                   UniqueUsersYesterday = st1.UniqueUsersToday,
                                   UsersYesterday = st1.UsersToday,
-                                  UniqueUsersToday = 0,
-                                  UsersToday = 0,
+                                  
+                                  //UniqueUsersToday = 0,
+                                  //UsersToday = 0,
                                   // UniqueUsersLast7days=st1.UniqueUsersLast7days,
                                   //UsersLast7days = st1.UsersLast7days,
                                   
@@ -82,23 +83,19 @@ namespace StatsUpdate_win_Service
                                   UniqueVisits = st1.UniqueVisits,
                                   VisitsYesterday = st1.VisitsToday,
                                   UniqueVisitsYesterday = st1.UniqueVisitsToday,
-                                  VisitsToday = 0,
-                                  UniqueVisitsToday = 0,
+                                  
+                                  RevisitsTotal_Yesterday = st1.RevisitsTotal_Today,
+                                  NoVisitsTotal_Yesterday = st1.NoVisitsTotal_Today,
+                                  //VisitsToday = 0,
+                                  //UniqueVisitsToday = 0,
                                   //UniqueVisitsLast7day = st1.UniqueVisitsLast7day,
                                   //VisitsLast7days = st1.VisitsLast7days,
                                   CampaignsLast7days = (st1.DaysCount_Week < 7) ? (st1.CampaignsLast7days) : 0,
-                                  CampaignsMonth = (st1.DaysCount_Month < 7) ? (st1.CampaignsMonth) : 0,
+                                  
 
-                                  UrlTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.UrlTotal_Month + st1.UrlTotal_Week) : 0,
-                                  UrlTotalPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.UrlTotalPercent_Month + st1.UrlPercent_Week) : 0,
-                                  VisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.VisitsTotal_Month + st1.VisitsTotal_Week) : 0,
-                                  VisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.VisitsPercent_Month + st1.VisitsPercent_Week) : 0,
-                                  RevisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.RevisitsTotal_Month + st1.RevisitsTotal_Week) : 0,
-                                  RevisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.RevisitsPercent_Month + st1.RevisitsPercent_Week) : 0,
-                                  NoVisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.NoVisitsTotal_Month + st1.NoVisitsTotal_Week) : 0,
-                                  NoVisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.NoVisitsPercent_Month + st1.NoVisitsPercent_Week) : 0,
+                                  
 
-                                  UrlTotal_Week = ((st1.DaysCount_Week < 2) ? (st1.VisitsToday) : 0)
+                                  UrlTotal_Week = ((st1.DaysCount_Week < 2) ? (st1.UrlTotal_Today) : 0)
                                                     + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UrlTotal_Week + st1.UrlTotal_Today):0),
                                   UrlPercent_Week = ((st1.DaysCount_Week < 2) ? (st1.UrlPercent_Today) : 0)
                                                     + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.UrlPercent_Week + st1.UrlPercent_Today) : 0),
@@ -115,6 +112,16 @@ namespace StatsUpdate_win_Service
                                   NoVisitsPercent_Week = ((st1.DaysCount_Week < 2) ? (st1.NoVisitsPercent_Today) : 0)
                                                     + ((st1.DaysCount_Week >= 2 && st1.DaysCount_Week < 7) ? (st1.NoVisitsTotal_Week + st1.NoVisitsPercent_Today) : 0),
 
+                                  CampaignsMonth = (st1.DaysCount_Month < daysinmonth) ? (st1.CampaignsMonth) : 0,
+                                  UrlTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.UrlTotal_Month + st1.UrlTotal_Week) : 0,
+                                  UrlTotalPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.UrlTotalPercent_Month + st1.UrlPercent_Week) : 0,
+                                  VisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.VisitsTotal_Month + st1.VisitsTotal_Week) : 0,
+                                  VisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.VisitsPercent_Month + st1.VisitsPercent_Week) : 0,
+                                  RevisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.RevisitsTotal_Month + st1.RevisitsTotal_Week) : 0,
+                                  RevisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.RevisitsPercent_Month + st1.RevisitsPercent_Week) : 0,
+                                  NoVisitsTotal_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.NoVisitsTotal_Month + st1.NoVisitsTotal_Week) : 0,
+                                  NoVisitsPercent_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.NoVisitsPercent_Month + st1.NoVisitsPercent_Week) : 0,
+                                  
                                   UrlTotal_Today = 0,
                                   UrlPercent_Today = 0,
                                   VisitsTotal_Today = 0,
@@ -123,6 +130,22 @@ namespace StatsUpdate_win_Service
                                   RevisitsPercent_Today = 0,
                                   NoVisitsTotal_Today = 0,
                                   NoVisitsPercent_Today = 0,
+
+                                  UniqueUsersToday = 0,
+                                  UsersToday = 0,
+                                  VisitsToday = 0,
+                                  UniqueVisitsToday = 0,
+                                  //UrlTotal_Today = st1.UrlTotal_Today,
+                                  //UrlPercent_Today = st1.UrlPercent_Today,
+                                  //VisitsTotal_Today = st1.VisitsTotal_Today,
+                                  //VisitsPercent_Today = st1.VisitsPercent_Today,
+                                  //RevisitsTotal_Today = st1.RevisitsTotal_Today,
+                                  //RevisitsTotal_Yesterday=st1.RevisitsTotal_Today,
+                                  //RevisitsPercent_Today = st1.RevisitsPercent_Today,
+                                  //NoVisitsTotal_Today = st1.NoVisitsTotal_Today,
+                                  //NoVisitsTotal_Yesterday=st1.NoVisitsTotal_Today,
+                                  //NoVisitsPercent_Today = st1.NoVisitsPercent_Today,
+                                  
 
                                   DaysCount_Week = (st1.DaysCount_Week < 7) ? (st1.DaysCount_Week + 1) : 0,
                                   DaysCount_Month = (st1.DaysCount_Month < daysinmonth) ? (st1.DaysCount_Month + 1) : 0,
@@ -157,6 +180,8 @@ namespace StatsUpdate_win_Service
                     st.RevisitsPercent_Today = stat_list1[rec].RevisitsPercent_Today;
                     st.NoVisitsTotal_Today = stat_list1[rec].NoVisitsTotal_Today;
                     st.NoVisitsPercent_Today = stat_list1[rec].NoVisitsPercent_Today;
+                    st.RevisitsTotal_Yesterday = stat_list1[rec].RevisitsTotal_Yesterday;
+                    st.NoVisitsTotal_Yesterday = stat_list1[rec].NoVisitsTotal_Yesterday;
 
                     st.UrlTotal_Week = stat_list1[rec].UrlTotal_Week;
                     st.UrlPercent_Week = stat_list1[rec].UrlPercent_Week;

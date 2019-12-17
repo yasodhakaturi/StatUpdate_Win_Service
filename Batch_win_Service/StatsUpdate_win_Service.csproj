@@ -140,6 +140,9 @@
     <Compile Include="riddata.cs">
       <DependentUpon>AnalyticalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="shorturlclickreference.cs">
+      <DependentUpon>AnalyticalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="shorturldata.cs">
       <DependentUpon>AnalyticalModel.tt</DependentUpon>
     </Compile>
@@ -158,6 +161,9 @@
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="stats_counts_today.cs">
+      <DependentUpon>AnalyticalModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="stat_counts.cs">
       <DependentUpon>AnalyticalModel.tt</DependentUpon>
     </Compile>

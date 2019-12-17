@@ -19,6 +19,7 @@ namespace StatsUpdate_win_Service
         {
             this.shorturldatas = new HashSet<shorturldata>();
             this.uiddatas = new HashSet<uiddata>();
+            this.stats_counts_today = new HashSet<stats_counts_today>();
         }
     
         public int PK_Rid { get; set; }
@@ -37,5 +38,7 @@ namespace StatsUpdate_win_Service
         public virtual ICollection<shorturldata> shorturldatas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<uiddata> uiddatas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<stats_counts_today> stats_counts_today { get; set; }
     }
 }

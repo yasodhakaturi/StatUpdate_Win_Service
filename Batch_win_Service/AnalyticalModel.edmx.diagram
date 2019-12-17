@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e5e2a8801d324668aac3f98e660ad51d" Name="Diagram1">
-        <EntityTypeShape EntityType="shortenurlModel.activity_counts" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.StatsUpdateuploaddata" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.campaignhookurl" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="shortenurlModel.city_blocks_ipv4_geolite2" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
@@ -33,7 +32,12 @@
         <AssociationConnector Association="shortenurlModel.FK_SHORTURLDATA_RIDDATA" ManuallyRouted="false" />
         <AssociationConnector Association="shortenurlModel.FK_UIDDATA_RIDDATA" ManuallyRouted="false" />
         <AssociationConnector Association="shortenurlModel.FK_SHORTURLDATA_UIDDATA" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="shortenurlModel.stat_counts" Width="1.5" PointX="13.375" PointY="7.75" />
+        <EntityTypeShape EntityType="shortenurlModel.activity_counts" Width="1.5" PointX="11.75" PointY="13.75" />
+        <EntityTypeShape EntityType="shortenurlModel.shorturlclickreference" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="shortenurlModel.stat_counts" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="shortenurlModel.stats_counts_today" Width="1.5" PointX="13.625" PointY="8" />
+        <AssociationConnector Association="shortenurlModel.clientid" />
+        <AssociationConnector Association="shortenurlModel.fkrid" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

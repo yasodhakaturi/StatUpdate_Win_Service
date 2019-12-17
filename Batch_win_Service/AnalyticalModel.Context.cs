@@ -27,7 +27,6 @@ namespace StatsUpdate_win_Service
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<activity_counts> activity_counts { get; set; }
         public virtual DbSet<batchuploaddata> batchuploaddatas { get; set; }
         public virtual DbSet<campaignhookurl> campaignhookurls { get; set; }
         public virtual DbSet<city_blocks_ipv4_geolite2> city_blocks_ipv4_geolite2 { get; set; }
@@ -47,7 +46,10 @@ namespace StatsUpdate_win_Service
         public virtual DbSet<tmp_rownum_update> tmp_rownum_update { get; set; }
         public virtual DbSet<uiddata> uiddatas { get; set; }
         public virtual DbSet<city_locations_geolite2> city_locations_geolite2 { get; set; }
+        public virtual DbSet<activity_counts> activity_counts { get; set; }
+        public virtual DbSet<shorturlclickreference> shorturlclickreferences { get; set; }
         public virtual DbSet<stat_counts> stat_counts { get; set; }
+        public virtual DbSet<stats_counts_today> stats_counts_today { get; set; }
     
         public virtual int InsertRIDData(string campaignName, string referencenumber, string pwd, Nullable<int> clientid)
         {
