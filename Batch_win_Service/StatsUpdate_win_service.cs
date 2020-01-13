@@ -153,7 +153,7 @@ namespace StatsUpdate_win_Service
                                   FK_ClientID=st1.FK_ClientID
                               }
                 ).ToList();
-
+                //dc.SaveChanges();
                 int rec = 0;
                 foreach (stat_counts st in stat_list2)
                 {
